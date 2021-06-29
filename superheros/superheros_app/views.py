@@ -10,3 +10,4 @@ def index(request):
         'all_superheros_app': all_superheros_app
     }
     return render(request, 'superheros_app/index.html', context)
+

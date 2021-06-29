@@ -10,7 +10,9 @@
 <body>
 <h1>List of Superheros</h1>
 <ul>
-
+    {% for superhero in all_superheros_app %}
+    <li><h2> {{superhero.name}} {% if superhero.name == "Bat Man" %} - Na Na, Na Na, na na NA! {% endif %}</h2></li>
+    {% endfor %}
 </ul>
 </body>
 </html>
