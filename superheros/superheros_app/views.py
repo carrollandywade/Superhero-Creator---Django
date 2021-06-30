@@ -14,8 +14,12 @@ def index(request):
     return render(request, 'superheros_app/index.html', context)
 
 
-def detail(request, superheros_id):
-    pass
+def detail(request, superheros_app_id):
+    single_superheros_app = superhero_app.objects.get('<int:superheros_app_id>')
+    context = {
+        'single_superheros_app': single_superheros_app
+    }
+    return render(request, superheros_app_id, context)
 
 
 def create(request):
