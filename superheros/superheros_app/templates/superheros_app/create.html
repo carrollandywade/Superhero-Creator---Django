@@ -10,9 +10,10 @@
 <body>
 <form action="{% url 'superheros_app:create_new_superhero' %}" method="post">
     {% csrf_token %}
-    Name:<input type="text" name=name" id="name"><br>
+    Name:<input type="text" name="name" id="name"><br>
     Alter Ego:<input type="text" name="alter_ego" id="alter_ego"><br>
     Primary Superhero ability:<input type="text" name="primary_superhero_ability" id="Primary_superhero_ability"><br>
+    Secondary Superhero ability:<input type="text" name="secondary_superhero_ability" id="Secondary_superhero_ability"><br>
     catchphrase:<input type="text" name="catchphrase" id="catchphrase"><br>
     <input type="submit" value="Add new!">
 </form>

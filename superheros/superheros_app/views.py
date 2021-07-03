@@ -14,23 +14,36 @@ def index(request):
     return render(request, 'superheros_app/index.html', context)
 
 
-def detail(request, superheros_app_id):
-    single_superheros_app = superhero_app.objects.get('<int:superheros_app_id>')
+def detail(request, superheros_id):
+    single_superheros_app = superhero_app.objects.get(id=superheros_id)
     context = {
         'single_superheros_app': single_superheros_app
     }
-    return render(request, superheros_app_id, context)
+    return render(request, 'superheros_app/detail.html', context)
 
 
 def create(request):
     if request.method == 'POST':
-        name = request.Post.get('name')
+        name = request.POST.get('name')
         alter_ego = request.POST.get('alter_ego')
         primary_superhero_ability = request.POST.get('primary_superhero_ability')
+        secondary_superhero_ability = request.POST.get('secondary_superhero_ability')
         catchphrase = request.POST.get('catchphrase')
-        new_superhero = superhero_app(name=name, genre=alter_ego, runtime=primary_superhero_ability,
-                                      release_date=catchphrase)
+        new_superhero = superhero_app(name=name,
+                                      alter_ego=alter_ego,
+                                      primary_superhero_ability=primary_superhero_ability,
+                                      secondary_superhero_ability=secondary_superhero_ability,
+                                      catchphrase=catchphrase)
         new_superhero.save()
-        return HttpResponseRedirect(reverse('superheros:index'))
+        return HttpResponseRedirect(reverse('superheros_app:index'))
     else:
-        return render(request, 'superheros/create.html')
+        return render(request, 'superheros_app/create.html')
+
+
+def update(request, superheros_id):
+    single_superheros_app = superhero_app.objects.get(id=superheros_id)
+    context = {
+        'single_superheros_app': single_superheros_app
+    }
+    return render(request, 'superheros_app/update.html', context)
+

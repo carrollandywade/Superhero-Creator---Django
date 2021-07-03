@@ -11,10 +11,10 @@
 <h1>List of Superheros</h1>
 <ul>
     {% for superhero in all_superheros_app %}
-    <li><h2> {{superhero.name}} {% if superhero.name == "Bat Man" %} - Na Na, Na Na, na na NA! {% endif %}</h2>
-    <a> href={% url 'superheros_app:detail' superhero_app.id %}">See more info</a>
-    </li>
+    <li><h2> {{superhero.name}} </h2>
+        <a href="{% url 'superheros_app:detail' superhero.id %}">See more info</a></li>
     {% endfor %}
+    <a href="{% url 'superheros_app:create_new_superhero' %}">Create a Superhero</a>
 </ul>
 </body>
 </html>
