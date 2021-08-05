@@ -8,6 +8,7 @@
     <title>Superhero Create</title>
 </head>
 <body>
+        <h1>Create A Superhero!</h1>
 <form action="{% url 'superheros_app:create_new_superhero' %}" method="post">
     {% csrf_token %}
     Name:<input type="text" name="name" id="name"><br>

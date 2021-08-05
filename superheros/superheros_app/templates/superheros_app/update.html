@@ -5,11 +5,28 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Superheros Update</title>
+    <title>Superhero Edit</title>
 </head>
 <body>
-<form action="{% url 'superheros_app:update_superhero' %}" method="post">
-    {% CSRF_TOKEN %}
+<h1>Update Superhero: {{single_superheros_app.name}}</h1>
+<p><a href="/superheros_app"> List Superheros</a></p>
+<hr/>
+<form action="{% url 'superheros_app:update' single_superheros_app.id %}" method="post">
+    {% csrf_token %}
+    Name:<input type="text" name="name" value="{{single_superheros_app.name}}" id="name"><br>
+    Alter Ego:<input type="text" name="alter_ego" value="{{single_superheros_app.alter_ego}}" id="alter_ego"><br>
+    Primary Superhero ability:<input type="text" name="primary_superhero_ability"
+                                     value="{{single_superheros_app.primary_superhero_ability}}"
+                                     id="Primary_superhero_ability"><br>
+    Secondary Superhero ability:<input type="text" name="secondary_superhero_ability"
+                                       value="{{single_superheros_app.secondary_superhero_ability}}"
+                                       id="Secondary_superhero_ability"><br>
+    catchphrase:<input type="text" name="catchphrase" value="{{single_superheros_app.catchphrase}}" id="catchphrase"><br>
+    <input type="submit" value="update!">
 </form>
+<ul>
+    <a href="{% url
+    'superheros_app:create_new_superhero' %}">Create a Superhero</a>
+</ul>
 </body>
 </html>

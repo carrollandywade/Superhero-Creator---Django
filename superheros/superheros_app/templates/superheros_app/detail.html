@@ -8,11 +8,11 @@
     <title>Superhero Details</title>
 </head>
 <body>
-<h1>{{single_superheros_app.name}}</h1>
+<h1>Super Hero:{{single_superheros_app.name}}</h1>
 <p>Alter Ego:{{single_superheros_app.alter_ego}}</p>
 <p>Primary Superhero Ability:{{single_superheros_app.primary_superhero_ability}}</p>
 <p>Secondary Superhero Ability:{{single_superheros_app.secondary_superhero_ability}}</p>
 <p>Catchphrase:{{single_superheros_app.catchphrase}}</p>
-
+<a href="{% url 'superheros_app:update' single_superheros_app.id %}">Update info</a><br>
 </body>
 </html>
