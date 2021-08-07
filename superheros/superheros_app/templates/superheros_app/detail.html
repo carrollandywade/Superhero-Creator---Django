@@ -5,14 +5,50 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Superhero Details</title>
 </head>
-<body>
-<h1>Super Hero:{{single_superheros_app.name}}</h1>
-<p>Alter Ego:{{single_superheros_app.alter_ego}}</p>
-<p>Primary Superhero Ability:{{single_superheros_app.primary_superhero_ability}}</p>
-<p>Secondary Superhero Ability:{{single_superheros_app.secondary_superhero_ability}}</p>
-<p>Catchphrase:{{single_superheros_app.catchphrase}}</p>
-<a href="{% url 'superheros_app:update' single_superheros_app.id %}">Update info</a><br>
-</body>
+    <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/superheros_app"> HOME </a>
+            </div>
+        </div>
+    </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>Super Hero:</th>
+                                    <th>{{single_superheros_app.name}}</th>
+                                </tr>
+                                <tr>
+                                    <th>Alter Ego:</th>
+                                    <th>{{single_superheros_app.alter_ego}}</th>
+                                </tr>
+                                <tr>
+                                    <th>Primary Superhero Ability:</th>
+                                    <th>{{single_superheros_app.primary_superhero_ability}}</th>
+                                </tr>
+                                <tr>
+                                    <th>Secondary Superhero Ability:</th>
+                                    <th>{{single_superheros_app.secondary_superhero_ability}}</th>
+                                </tr>
+                                <tr>
+                                    <th>Catchphrase:</th>
+                                    <th>{{single_superheros_app.catchphrase}}</th>
+                                </tr>
+                            </table>
+        <a href="{% url 'superheros_app:update' single_superheros_app.id %}">Update {{single_superheros_app.name}}'s file.</a><br>
+        <a href="{% url 'superheros_app:kryptonite' single_superheros_app.id %}">Remove {{single_superheros_app.name}} from all records.</a>
+                        </div>
+                    </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </body>
 </html>

@@ -5,18 +5,53 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Superhero Create</title>
 </head>
 <body>
-        <h1>Create A Superhero!</h1>
-<form action="{% url 'superheros_app:create_new_superhero' %}" method="post">
-    {% csrf_token %}
-    Name:<input type="text" name="name" id="name"><br>
-    Alter Ego:<input type="text" name="alter_ego" id="alter_ego"><br>
-    Primary Superhero ability:<input type="text" name="primary_superhero_ability" id="Primary_superhero_ability"><br>
-    Secondary Superhero ability:<input type="text" name="secondary_superhero_ability" id="Secondary_superhero_ability"><br>
-    catchphrase:<input type="text" name="catchphrase" id="catchphrase"><br>
-    <input type="submit" value="Add new!">
-</form>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/superheros_app"> HOME </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h1>Create A Superhero!</h1>
+            <div class="container-fluid">
+                <form action="{% url 'superheros_app:create_new_superhero' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                       <label for="name">Name:</label><br>
+                        <input type="text" name="name" id="name"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Alter Ego:</label><br>
+                        <input type="text" name="alter_ego" id="alter_ego"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Primary Superhero ability:</label><br>
+                        <input type="text" name="primary_superhero_ability" id="Primary_superhero_ability"><br>
+                    </div>
+                    <div class="form-group">
+                       <label for="name">Secondary Superhero ability:</label><br>
+                        <input type="text" name="secondary_superhero_ability" id="Secondary_superhero_ability"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">catchphrase:</label><br>
+                        <input type="text" name="catchphrase" id="catchphrase"><br>
+                    </div>
+                     <input type="submit" value="update!">
+                </form>
+
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
 </body>
 </html>
